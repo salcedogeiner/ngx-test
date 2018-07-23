@@ -17,7 +17,10 @@ export class UserService {
     kate: { name: 'Kate Martinez', picture: 'assets/images/kate.png' },
   };
 
-  private userArray: any[];
+  private userArray = [
+    { name: 'Nick Jones', picture: 'assets/images/nick.png' },
+    { name: 'Eva Moor', picture: 'assets/images/eva.png' }
+  ];
 
   constructor() {
     // this.userArray = Object.values(this.users);
@@ -27,7 +30,7 @@ export class UserService {
     return observableOf(this.users);
   }
 
-  getUserArray(): Observable<any[]> {
+  getUserArray(): Observable<any> {
     return observableOf(this.userArray);
   }
 

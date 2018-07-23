@@ -1,0 +1,46 @@
+<nb-card>
+  <nb-card-header>Default Inputs</nb-card-header>
+  <nb-card-body>
+
+    <form (ngSubmit)="onSubmit()" #crudAlgo="ngForm">
+        <fieldset>
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name"
+                   required
+                   [(ngModel)]="model.name" name="name"
+                   #name="ngModel">
+            <div [hidden]="name.valid || name.pristine"
+                 class="alert alert-danger">
+              Name is required
+            </div>
+        </fieldset>
+        <fieldset>
+            <label for="picture">picture</label>
+            <input type="text" class="form-control" id="picture"
+                   required
+                   [(ngModel)]="model.picture" name="picture"
+                   #picture="ngModel">
+            <div [hidden]="picture.valid || picture.pristine"
+                 class="alert alert-danger">
+              Name is required
+            </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-success" [disabled]="!crudAlgo.form.valid">Submit</button>
+
+    </form>
+
+    <pre>{{userList | json}}</pre>
+
+    <table class="table table-bordered">
+      <tr *ngFor="let item of userList.value">
+        <td>{{item.name}}</td>
+        <td>{{item.picture}}</td>
+      </tr>
+    </table>
+
+    <ng2-smart-table [settings]="settings" [source]="userList.value" >
+      </ng2-smart-table>
+
+  </nb-card-body>
+</nb-card>

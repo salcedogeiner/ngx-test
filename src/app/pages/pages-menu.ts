@@ -8,6 +8,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
+    title: 'Crud',
+    icon: 'nb-home',
+    link: '/pages/crud-algo',
+  },
+  /*{
     title: 'FEATURES',
     group: true,
   },
@@ -107,7 +112,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Echarts',
         link: '/pages/charts/echarts',
       },
-      {
+      {npm audit fix
         title: 'Charts.js',
         link: '/pages/charts/chartjs',
       },
@@ -172,5 +177,5 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/auth/reset-password',
       },
     ],
-  },
+  },*/
 ];
